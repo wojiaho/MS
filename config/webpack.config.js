@@ -462,6 +462,9 @@ module.exports = function(webpackEnv) {
                 {
                   importLoaders: 3,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
+                  modifyVars: {
+                    'primary-color': '#1890ff'
+                  }
                 },
                 'less-loader'
               ),
@@ -637,6 +640,9 @@ module.exports = function(webpackEnv) {
       net: 'empty',
       tls: 'empty',
       child_process: 'empty',
+    },
+    externals:{
+      'BMap':'BMap'
     },
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

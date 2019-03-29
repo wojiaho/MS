@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.less';
 import Header from './components/header';
 import Footer from './components/footer';
 import NavLeft from './components/navLeft';
+import Home from './pages/home';
 
 class App extends Component {
   render() {
@@ -13,7 +14,9 @@ class App extends Component {
         </div>
         <div className="main">
           <Header/>
-          <div>container</div>
+          <div className="container">
+            <Home/>
+          </div>
           <Footer/>
         </div>
       </div>
