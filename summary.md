@@ -12,7 +12,7 @@
 
 
  ### react-router 4.0
-vue中我们可以使用router.beforeEach做路由拦截，但是在react-router 4.0中取消了这种API，为了作者希望react-router更加灵活，所以我们需要自己去实现路由拦截
+vue中我们可以使用router.beforeEach做路由拦截，但是在react-router 4.0中取消了这种API，因为作者希望react-router更加灵活，所以我们需要自己去实现路由拦截
 
 首先有我们要有一个路由配置,auto代表是否需要登录拦截,basePath表示当前路由是一个二级路由，他的跟路由(不需要可以去掉),path表示当前路由
 ```

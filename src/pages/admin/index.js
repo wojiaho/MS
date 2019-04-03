@@ -5,9 +5,6 @@ import Footer from '../../components/footer';
 import NavLeft from '../../components/navLeft';
 
 export default class Admin extends Component {
-  componentWillMount() {
-    console.log(this.props);
-  }
   render() {
     return (
       <div className="page-wrapper">
@@ -21,7 +18,6 @@ export default class Admin extends Component {
           </div>
           <Footer/>
         </div>
-        
       </div>
     );
   }
