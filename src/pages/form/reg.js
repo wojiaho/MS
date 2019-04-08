@@ -1,6 +1,5 @@
 import React, {  Component } from 'react';
-import { Card, Form, Button, Input, Checkbox, Radio, Select, Switch, DatePicker, TimePicker, InputNumber }  from 'antd';
-import locale from 'antd/lib/date-picker/locale/zh_CN';
+import { Card, Form, Button, Input, Checkbox, Radio, Select, Switch, DatePicker, InputNumber }  from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
@@ -154,7 +153,7 @@ class FormRegister extends Component {
               }
             </FromItem>
             <FromItem style={{textAlign: 'center'}}>
-              <Button type="primary" onClick={() => this.handleRegister()}>注册</Button>
+              <Button type="primary" onClick={this.handleRegister}>注册</Button>
             </FromItem>
           </Form>
         </Card>

@@ -12,7 +12,7 @@ export default class Admin extends Component {
           <NavLeft/>
         </div>
         <div className="main">
-          <Header/>
+          <Header routeConfig={this.props.routeConfig}/>
           <div className="container">
             {this.props.children}
           </div>

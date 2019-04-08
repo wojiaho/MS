@@ -3,17 +3,18 @@ import { Row, Col, Breadcrumb } from 'antd'
 // import BMap from 'BMap'
 import '../../style/common.less'
 import './index.less'
+import { connect } from 'react-redux';
 // import axios from 'axios'
 const moment = require('moment');
 
 
-export default class Header extends Component {
+class Header extends Component {
   state = {
     date: moment().format('YYYY-MM-DD')
   }
   componentWillMount() {
-    console.log(this.state)
     // this.getsCurrentPosition();
+    console.log(this.props)
   }
   // getsCurrentPosition () {
   //   // 百度地图API功能
@@ -38,10 +39,7 @@ export default class Header extends Component {
         <Row className="header-info">
           <Col span={20}>
             <Breadcrumb className="bread-crumb">
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item><a href="#center">Application Center</a></Breadcrumb.Item>
-              <Breadcrumb.Item><a href="#list">Application List</a></Breadcrumb.Item>
-              <Breadcrumb.Item>An Application</Breadcrumb.Item>
+              <Breadcrumb.Item>{this.props.menuName}</Breadcrumb.Item>
             </Breadcrumb>
           </Col>
           <Col span={4}>
@@ -53,3 +51,9 @@ export default class Header extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return {
+    menuName: state.menuName
+  }
+}
+export default connect(mapStateToProps)(Header)

@@ -15,7 +15,7 @@ export default class Home extends Component {
       return (<Route to='/noFound' component={NoFound}/>)
     } else if (targetRouterConfig.basePath){
       return ( 
-        <Admin>
+        <Admin routeConfig={targetRouterConfig}>
           <Route path={targetRouterConfig.path} component={targetRouterConfig.component}/> 
         </Admin> 
       )

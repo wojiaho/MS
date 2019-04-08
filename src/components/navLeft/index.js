@@ -3,9 +3,11 @@ import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom'
 import './index.less'
 import  menuJson from '../../json/menuList';
+import { connect } from 'react-redux';
+import { switchMenu } from '../../redux/action';
 const SubMenu = Menu.SubMenu;
 
-export default class NavLeft extends Component {
+class NavLeft extends Component {
   state = {
     menuList: []
   }
@@ -25,6 +27,11 @@ export default class NavLeft extends Component {
     })
     
   }
+  handleClick = ({ item, key, keyPath }) => {
+    const { dispatch } = this.props;
+    dispatch(switchMenu(item.props.title))
+
+  }
   render() {
     return (
       <div>
@@ -32,10 +39,12 @@ export default class NavLeft extends Component {
           <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt=""/>
           <span>后台管理系统</span>
         </div>
-        <Menu mode="inline" theme="dark">
+        <Menu mode="inline" theme="dark" onClick={this.handleClick}>
           {this.state.menuList}
         </Menu>
       </div>
     )
   }
 }
+
+export default connect()(NavLeft)
