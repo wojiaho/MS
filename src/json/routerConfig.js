@@ -6,6 +6,8 @@ import Button from '../pages/ui/buttons';
 import Modal from '../pages/ui/modals';
 import Loading from '../pages/ui/loadings';
 import Notification from '../pages/ui/notification';
+import Message from '../pages/ui/messages';
+import Tab from '../pages/ui/tabs';
 import FormLogin from '../pages/form/login';
 import FormReg from '../pages/form/reg';
 const routerConfig = [
@@ -38,6 +40,18 @@ const routerConfig = [
     basePath: '/admin',
     path:'/ui/notification',
     component: Notification,
+  },
+  {
+    title:'全局Message',
+    basePath: '/admin',
+    path:'/ui/messages',
+    component: Message,
+  },
+  {
+    title:'tab页签',
+    basePath: '/admin',
+    path:'/ui/tabs',
+    component: Tab,
   },
   {
     title:'登录表单',

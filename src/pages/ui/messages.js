@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, Button,  message}  from 'antd'
 import './index.less'
 
-export default class Home extends Component {
+export default class Message extends Component {
 
   handleOpen = (type) => {
     message[type]('恭喜你，成为百万富翁!');
