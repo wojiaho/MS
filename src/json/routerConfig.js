@@ -8,6 +8,8 @@ import Loading from '../pages/ui/loadings';
 import Notification from '../pages/ui/notification';
 import Message from '../pages/ui/messages';
 import Tab from '../pages/ui/tabs';
+import Gallery from '../pages/ui/gallery';
+import MSCarousel from '../pages/ui/carousel';
 import FormLogin from '../pages/form/login';
 import FormReg from '../pages/form/reg';
 const routerConfig = [
@@ -54,6 +56,18 @@ const routerConfig = [
     component: Tab,
   },
   {
+    title:'图片画廊',
+    basePath: '/admin',
+    path:'/ui/gallery',
+    component: Gallery,
+  },
+  {
+    title:'跑马灯',
+    basePath: '/admin',
+    path:'/ui/carousel',
+    component: MSCarousel,
+  },
+  {
     title:'登录表单',
     basePath: '/admin',
     path:'/form/login',
@@ -63,7 +77,7 @@ const routerConfig = [
     title:'注册表单',
     basePath: '/admin',
     path:'/form/reg',
-    component: FormReg,
+    component: FormReg
   },
   {
     title:'登录',

@@ -30,7 +30,6 @@ class NavLeft extends Component {
   handleClick = ({ item, key, keyPath }) => {
     const { dispatch } = this.props;
     dispatch(switchMenu(item.props.title))
-
   }
   render() {
     return (

@@ -22,7 +22,5 @@ export default class Home extends Component {
     } else {
       return (<Route path={targetRouterConfig.path} component={targetRouterConfig.component} />)
     }
-    
-   
 	}
 }
