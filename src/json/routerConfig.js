@@ -55,6 +55,16 @@ const routerConfig = [
     path:'/form/reg',
   },
   {
+    title:'基础表格',
+    basePath: '/admin',
+    path:'/table/basic',
+  },
+  {
+    title:'高级表格',
+    basePath: '/admin',
+    path:'/table/high',
+  },
+  {
     title:'登录',
     path:'/login'
   },
