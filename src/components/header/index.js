@@ -14,7 +14,6 @@ class Header extends Component {
   }
   componentWillMount() {
     // this.getsCurrentPosition();
-    console.log(this.props)
   }
   // getsCurrentPosition () {
   //   // 百度地图API功能

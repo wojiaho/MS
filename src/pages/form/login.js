@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Card, Form, Input, Button, Message, Checkbox }  from 'antd'
+import React, { Component } from 'react';
+import { Card, Form, Input, Button, Message, Checkbox }  from 'antd';
+import '../ui/index.less';
 
 const FormItem = Form.Item;
 class FormLogin extends Component {
