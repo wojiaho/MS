@@ -109,7 +109,10 @@ module.exports = function(webpackEnv) {
         loader: require.resolve(preProcessor),
         options: {
           sourceMap: isEnvProduction && shouldUseSourceMap,
-          javascriptEnabled: true
+          javascriptEnabled: true,
+          modifyVars: {
+            'primary-color': '#1DA57A'
+          }
         },
       });
     }
@@ -461,10 +464,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 3,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modifyVars: {
-                    'primary-color': '#1890ff'
-                  }
+                  sourceMap: isEnvProduction && shouldUseSourceMap
                 },
                 'less-loader'
               ),
