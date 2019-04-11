@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import NoFound from './pages/noFound';
 import Admin from './pages/admin';
 import Loadable from 'react-loadable';

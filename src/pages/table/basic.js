@@ -19,7 +19,7 @@ export default class BasicTable extends React.Component {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a href="javascript:;">{text}</a>,
+      render: text => <span>{text}</span>,
     }, {
       title: 'Age',
       dataIndex: 'age',
@@ -48,9 +48,9 @@ export default class BasicTable extends React.Component {
       key: 'action',
       render: (text, record) => (
         <span>
-          <a href="javascript:;">Invite {record.name}</a>
+          <span>Invite {record.name}</span>
           <Divider type="vertical" />
-          <a href="javascript:;">Delete</a>
+          <span>Delete</span>
         </span>
       ),
     }];

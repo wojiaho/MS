@@ -2,6 +2,11 @@ const routerConfig = [
   {
     title:'首页',
     basePath: '/admin',
+    path:'/',
+  },
+  {
+    title:'首页',
+    basePath: '/admin',
     path:'/home',
   },
   {
@@ -63,6 +68,11 @@ const routerConfig = [
     title:'高级表格',
     basePath: '/admin',
     path:'/table/high',
+  },
+  {
+    title:'车辆地图',
+    basePath: '/admin',
+    path:'/bikeMap',
   },
   {
     title:'登录',

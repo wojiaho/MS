@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Tag, Divider }  from 'antd'
+import { Table }  from 'antd'
 import './index.less';
 
 export default class HightTable extends React.Component {
@@ -60,7 +60,7 @@ export default class HightTable extends React.Component {
         key: 'operation',
         fixed: 'right',
         width: 100,
-        render: () => <a href="javascript:;">action</a>,
+        render: () => <span>action</span>,
       },
     ];
 
