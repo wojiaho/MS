@@ -70,9 +70,29 @@ const routerConfig = [
     path:'/table/high',
   },
   {
+    title:'富文本',
+    basePath: '/admin',
+    path:'/editor',
+  },
+  {
+    title:'订单列表',
+    basePath: '/admin',
+    path:'/order/list',
+  },
+  {
+    title:'订单详情',
+    basePath: '/admin',
+    path:'/order/detail',
+  },
+  {
     title:'车辆地图',
     basePath: '/admin',
     path:'/bikeMap',
+  },
+  {
+    title:'柱形图',
+    basePath: '/admin',
+    path:'/charts/bar',
   },
   {
     title:'登录',
@@ -80,8 +100,7 @@ const routerConfig = [
   },
   {
     title:'noFound',
-    path:'/noFound',
-    // component: NoFound
+    path:'/noFound'
   },
 ];
 export default routerConfig;

@@ -19,7 +19,7 @@ export default class BikeMap extends React.Component {
   initMap = () => {
     const map = new AMap.Map('container', {
       center: [121.6616, 31.140982],
-      zoom: 12
+      zoom: 14
     });
     this.setState({ map });
 

@@ -84,27 +84,17 @@ const menuList = [
     },
     {
         title:'富文本',
-        key:'/rich',
-        component: 'Rich'
-    },
-    {
-        title:'城市管理',
-        key:'/city',
-        component: 'City'
+        key:'/editor',
+        component: 'Editor'
     },
     {
         title:'订单管理',
         key:'/order',
         children:[
             {
-                title:'订单详情',
-                key:'/order/detail',
-                component: 'Detail'
-            },
-            {
-                title:'结束订单',
-                key:'/order/finish',
-                component: 'Finish'
+                title:'订单列表',
+                key:'/order/list',
+                component: 'OrderList'
             }
         ]
     },
@@ -119,7 +109,7 @@ const menuList = [
         component: 'BikeMap'
     },
     {
-        title:'图标',
+        title:'图表',
         key:'/charts',
         children:[
             {

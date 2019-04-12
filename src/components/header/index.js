@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Breadcrumb } from 'antd'
-// import BMap from 'BMap'
+// import BMap from 'bmap'
 import '../../style/common.less'
 import './index.less'
 import { connect } from 'react-redux';
