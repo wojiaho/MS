@@ -95,6 +95,26 @@ const routerConfig = [
     path:'/charts/bar',
   },
   {
+    title:'饼图',
+    basePath: '/admin',
+    path:'/charts/pie',
+  },
+  {
+    title:'折线图',
+    basePath: '/admin',
+    path:'/charts/line',
+  },
+  {
+    title:'代码高亮',
+    basePath: '/admin',
+    path:'/highLighter',
+  },
+  {
+    title:'markdown',
+    basePath: '/admin',
+    path:'/markdown',
+  },
+  {
     title:'登录',
     path:'/login'
   },

@@ -128,6 +128,16 @@ const menuList = [
                 component: 'Line'
             },
         ]
-    }
+    },
+    {
+      title:'代码高亮',
+      key:'/highLighter',
+      component: 'HighLighter'
+    },
+    {
+      title:'markdown',
+      key:'/markdown',
+      component: 'Markdown'
+    },
 ];
 export default menuList;
