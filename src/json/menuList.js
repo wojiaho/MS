@@ -139,5 +139,17 @@ const menuList = [
       key:'/markdown',
       component: 'Markdown'
     },
+    {
+        title:'无线滚动',
+        key:'/infiniteScroll',
+        children:[
+            {
+                title:'virtualized',
+                key:'/infiniteScroll/virtualized',
+                component: 'Virtualized'
+            },
+            
+        ]
+    },
 ];
 export default menuList;

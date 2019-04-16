@@ -115,6 +115,11 @@ const routerConfig = [
     path:'/markdown',
   },
   {
+    title:'无限滚动virtualized',
+    basePath: '/admin',
+    path:'/infiniteScroll/virtualized',
+  },
+  {
     title:'登录',
     path:'/login'
   },
