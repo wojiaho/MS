@@ -104,9 +104,25 @@ const menuList = [
         component: 'User'
     },
     {
-        title:'车辆地图',
-        key:'/bikeMap',
-        component: 'BikeMap'
+      title:'地图',
+      key:'/map',
+      children:[
+          {
+              title:'高德地图',
+              key:'/map/aMap',
+              component: 'AMap'
+          },
+          {
+              title:'react版高德地图',
+              key:'/map/reactAMap',
+              component: 'ReactAMap'
+          },
+          {
+              title:'google地图',
+              key:'/map/googleMap',
+              component: 'GoogleMap'
+          }
+      ]
     },
     {
         title:'图表',
@@ -147,6 +163,11 @@ const menuList = [
                 title:'virtualized',
                 key:'/infiniteScroll/virtualized',
                 component: 'Virtualized'
+            },
+            {
+                title:'antdTableInfinity',
+                key:'/infiniteScroll/antdTableInfinity',
+                component: 'AntdTableInfinity'
             },
             
         ]

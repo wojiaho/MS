@@ -85,9 +85,19 @@ const routerConfig = [
     path:'/order/detail',
   },
   {
-    title:'车辆地图',
+    title:'高德地图',
     basePath: '/admin',
-    path:'/bikeMap',
+    path:'/map/aMap',
+  },
+  {
+    title:'react版高德地图',
+    basePath: '/admin',
+    path:'/map/reactAMap',
+  },
+  {
+    title:'google地图',
+    basePath: '/admin',
+    path:'/map/googleMap',
   },
   {
     title:'柱形图',
@@ -118,6 +128,11 @@ const routerConfig = [
     title:'无限滚动virtualized',
     basePath: '/admin',
     path:'/infiniteScroll/virtualized',
+  },
+  {
+    title:'无限滚动antdTableInfinity',
+    basePath: '/admin',
+    path:'/infiniteScroll/antdTableInfinity',
   },
   {
     title:'登录',
