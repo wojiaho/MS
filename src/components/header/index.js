@@ -4,9 +4,10 @@ import { Row, Col, Breadcrumb } from 'antd'
 import '../../style/common.less'
 import './index.less'
 import { connect } from 'react-redux';
+// import { Login } from '../../mock';
 // import axios from 'axios'
 const moment = require('moment');
-
+// console.log(Login)
 
 class Header extends Component {
   state = {
