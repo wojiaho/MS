@@ -1,6 +1,6 @@
-import React from "react"
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import React from "react";
+import { compose, withProps } from "recompose";
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 const MyMapComponent = compose(
   withProps({
@@ -12,13 +12,13 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props =>  
-    <GoogleMap
-      defaultZoom={8}
-      defaultCenter={{ lat: -34.397, lng: 150.644 }}
-      >
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
-    </GoogleMap>
-)
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} onClick={props.onMarkerClick} />}
+  </GoogleMap>
+);
 
 export default class MyFancyComponent extends React.PureComponent {
   state = {
@@ -26,18 +26,18 @@ export default class MyFancyComponent extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.delayedShowMarker()
+    this.delayedShowMarker();
   }
 
   delayedShowMarker = () => {
     setTimeout(() => {
-      this.setState({ isMarkerShown: true })
-    }, 3000)
+      this.setState({ isMarkerShown: true });
+    }, 3000);
   }
 
   handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false })
-    this.delayedShowMarker()
+    this.setState({ isMarkerShown: false });
+    this.delayedShowMarker();
   }
 
   render() {
@@ -46,6 +46,6 @@ export default class MyFancyComponent extends React.PureComponent {
         isMarkerShown={this.state.isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
       />
-    )
+    );
   }
 }

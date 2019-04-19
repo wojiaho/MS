@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Router from './router'
+import Router from './router';
 import { Provider } from 'react-redux';
 import configStore from './redux/store';
 const store = configStore();  

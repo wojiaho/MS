@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, Modal } from 'antd'
+import { Button, Modal } from 'antd';
 // 引入编辑器组件
 import BraftEditor from 'braft-editor';
 // 引入编辑器样式
 import 'braft-editor/dist/index.css';
 
-import './index.less'
+import './index.less';
 
 
 export default class Editor extends React.Component {
@@ -17,14 +17,14 @@ export default class Editor extends React.Component {
   setEditorContent = () => {
     this.setState({
       editorState: BraftEditor.createEditorState('这是我设置的富文本的内容')
-    })
+    });
   }
   getEditorContent = () => {
     this.setState({ visible: true});
   }
 
   render() {
-    const { editorState } = this.state
+    const { editorState } = this.state;
     return (
       <div className="content-wrap">
         <Button className="btn" type="primary" onClick={this.setEditorContent}>设置富文本内容</Button>
@@ -43,6 +43,6 @@ export default class Editor extends React.Component {
           </p>
         </Modal>
       </div>
-    )
+    );
   }
 }

@@ -6,6 +6,6 @@ export default class Info extends Component {
       <div>
         动态路由id是: {this.props.match.params.id}
       </div>
-    )
+    );
   }
 }

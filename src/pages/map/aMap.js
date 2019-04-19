@@ -1,6 +1,6 @@
 import React from 'react';
 // import {Card, Form } from 'antd';
-import './index.less'
+import './index.less';
 const AMap = window.AMap;
 
 export default class BikeMap extends React.Component {
@@ -12,7 +12,7 @@ export default class BikeMap extends React.Component {
     console.log(window.AMap);
   }
   componentDidMount() {
-      this.initMap();
+    this.initMap();
     
   }
 
@@ -35,10 +35,10 @@ export default class BikeMap extends React.Component {
 
     map.add(markerList);
     const path = [
-        [121.651987, 31.153176],
-        [121.686319, 31.154645],
-        [121.671127, 31.134958],
-        [121.648725, 31.135472],
+      [121.651987, 31.153176],
+      [121.686319, 31.154645],
+      [121.671127, 31.134958],
+      [121.648725, 31.135472]
     ];
     
     // 创建折线实例
@@ -63,7 +63,7 @@ export default class BikeMap extends React.Component {
       // 触发事件类型
       var type = ev.type;
 
-      console.log(target, lnglat, pixel, type)
+      console.log(target, lnglat, pixel, type);
     });
   }
 
@@ -72,6 +72,6 @@ export default class BikeMap extends React.Component {
       <div>
         <div id="container"></div> 
       </div>
-    )
+    );
   }
 }

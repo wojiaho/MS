@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Row, Col, Breadcrumb } from 'antd'
+import React, { Component } from 'react';
+import { Row, Col, Breadcrumb } from 'antd';
 // import BMap from 'bmap'
-import '../../style/common.less'
-import './index.less'
+import '../../style/common.less';
+import './index.less';
 import { connect } from 'react-redux';
 // import { Login } from '../../mock';
 // import axios from 'axios'
@@ -48,12 +48,12 @@ class Header extends Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
 const mapStateToProps = state => {
   return {
     menuName: state.menuName
-  }
-}
-export default connect(mapStateToProps)(Header)
+  };
+};
+export default connect(mapStateToProps)(Header);

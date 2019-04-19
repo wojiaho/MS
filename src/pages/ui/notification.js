@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Card, Button, notification }  from 'antd'
-import './index.less'
+import React, { Component } from 'react';
+import { Card, Button, notification }  from 'antd';
+import './index.less';
 
 export default class Home extends Component {
 
@@ -9,10 +9,10 @@ export default class Home extends Component {
       message: '今天要发工资啦！',
       description: '今天是15号，公司准时发工资了，赶快查收吧٩(๑❛ᴗ❛๑)۶',
       placement: position || 'topRight'
-    })
+    });
   }
  	render() {
-     return (
+    return (
       <div>
         <Card  className="card card-wrap" title="消息提醒">
           <Button type="primary" onClick={() => {this.handleOpen('success')}}>success</Button>
@@ -27,6 +27,6 @@ export default class Home extends Component {
           <Button type="primary" onClick={() => {this.handleOpen('error', 'bottomRight')}}>bottomRight</Button>
         </Card>
       </div>
-     )
+    );
   }
 }

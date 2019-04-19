@@ -19,23 +19,23 @@ export default class Gallery extends React.Component {
           description="www.instagram.com"
         />
       </Card>
-    ))
+    ));
     return (
       <div className="card-wrap">
         <Row gutter={16}>
           {imgList.map((item, index) => {
             return (
               index === 4 ?
-              <Col key={index} md={4}>
-                {item}
-              </Col>
-              : <Col key={index} md={5}>
-                {item}
-              </Col>
-            )
+                <Col key={index} md={4}>
+                  {item}
+                </Col>
+                : <Col key={index} md={5}>
+                  {item}
+                </Col>
+            );
           })}
         </Row>
       </div>
-    )
+    );
   }
 }

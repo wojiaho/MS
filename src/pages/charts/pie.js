@@ -121,6 +121,6 @@ export default class PieChart extends React.Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }

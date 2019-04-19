@@ -10,18 +10,18 @@ const instance = Axios.create({
 });
 
 instance.interceptors.response.use(function (response) {
-    const { data } = response;
-    if (data.status ===  'ok') {
-      return data;
-    } else {
-      message.error(data.msg);
-      return Promise.reject(data);
-    }
-  },
-  error => {
-    return Promise.reject(error.msg)
-  });
+  const { data } = response;
+  if (data.status ===  'ok') {
+    return data;
+  } else {
+    message.error(data.msg);
+    return Promise.reject(data);
+  }
+},
+error => {
+  return Promise.reject(error.msg);
+});
 
 export {
   instance
-}
+};

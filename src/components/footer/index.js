@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './index.less'
+import React, { Component } from 'react';
+import './index.less';
 
 export default class Footer extends Component {
   render() {
@@ -7,6 +7,6 @@ export default class Footer extends Component {
       <div className="footer">
         &copy;  2019ms 本网站最终解释权归超级马里奥奥德赛所有
       </div>
-    )
+    );
   }
 }

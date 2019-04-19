@@ -6,16 +6,16 @@ const FormItem = Form.Item;
 class FormLogin extends Component {
   handleLogin = () => {
     this.props.form.validateFields((errors, values) => {
-      console.log(values)
+      console.log(values);
       if(!errors) {
-        Message.success(`登录成功，用户名为：${values.userName},密码：${values.password}`)
+        Message.success(`登录成功，用户名为：${values.userName},密码：${values.password}`);
       }
     });
   } 
  	render() {
-     const { getFieldDecorator } = this.props.form;
-     return (
-       <div>
+    const { getFieldDecorator } = this.props.form;
+    return (
+      <div>
         <Card className="card card-wrap" title="登录行内表单">
           <Form layout="inline">
             <FormItem>
@@ -71,8 +71,8 @@ class FormLogin extends Component {
             </FormItem>
           </Form>
         </Card>
-       </div>
-     )
+      </div>
+    );
   }
 }
 export default Form.create({ name: 'FormLogin' })(FormLogin);

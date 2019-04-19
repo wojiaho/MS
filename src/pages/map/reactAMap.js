@@ -7,7 +7,7 @@ const polygonStyle = {
   strokeWeight: 6,
   fillOpacity: 0.4,
   fillColor: '#1791fc'
-}
+};
 
 const ZoomCtrl = (props) => {
   // const map = props.__map__;
@@ -15,7 +15,7 @@ const ZoomCtrl = (props) => {
     <button >zoom in</button>
     <button>zoom out</button>
   </div>);
-}
+};
 
 export default class ReactAMap extends React.Component {
   constructor() {
@@ -53,7 +53,7 @@ export default class ReactAMap extends React.Component {
       moveend: () => {
         this.showCenter();
       }
-    }
+    };
   }
   // 设置中心位置
   showCenter = () => {
@@ -74,13 +74,13 @@ export default class ReactAMap extends React.Component {
   toggleWindowShow = () => {
     this.setState({
       windowVisible: !this.state.windowVisible
-    })
+    });
   }
   // 修改窗体偏移量
   changeOffset = () => {
     this.setState({
       offset: [Math.random() * 10, Math.random() * 10]
-    })
+    });
   }
   render() {
     const { status } = this.state;
@@ -109,7 +109,7 @@ export default class ReactAMap extends React.Component {
             <h4>当前地图状态</h4>
             <ul>
               {Object.keys(status).map((item, index) => {
-                return <li key={index}>{item} : {`${status[item]}`}</li> 
+                return <li key={index}>{item} : {`${status[item]}`}</li>; 
               })}
             </ul>
           </div>
@@ -128,6 +128,6 @@ export default class ReactAMap extends React.Component {
         </div>
         
       </div>
-    )
+    );
   }
 }

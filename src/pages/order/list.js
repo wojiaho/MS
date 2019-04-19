@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Button, message } from 'antd'
+import {Table, Button, message } from 'antd';
 import './index.less';
 
 export default class OrderList extends React.Component {
@@ -19,7 +19,7 @@ export default class OrderList extends React.Component {
     let { history } = this.props;
     const { selectedRows } = this.state;
     if(selectedRows.length < 1) {
-      message.error('请选择一条订单！')
+      message.error('请选择一条订单！');
       return false;
     }
     history.push({
@@ -33,9 +33,9 @@ export default class OrderList extends React.Component {
       onChange: (selectedRowKeys, selectedRows) => {
         this.setState({
           selectedRows
-        })
+        });
       }
-    }
+    };
     const columns = [{
       title: '订单号',
       dataIndex: 'orderNo',
@@ -52,6 +52,6 @@ export default class OrderList extends React.Component {
         <Button className="btn" type="primary" onClick={this.getOrderDetail}>查看详情</Button>
         <Table rowSelection={rowSelection} columns={columns} dataSource={this.state.data} bordered/>
       </div>
-    )
+    );
   }
 }

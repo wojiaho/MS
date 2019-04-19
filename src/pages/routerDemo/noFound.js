@@ -6,6 +6,6 @@ export default class Info extends Component {
       <div>
         No Found
       </div>
-    )
+    );
   }
 }

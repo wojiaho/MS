@@ -30,6 +30,6 @@ export default class Tab extends Component {
           </Tabs>
         </Card>
       </div>
-    )
+    );
   }
 }

@@ -12,7 +12,7 @@ class FormRegister extends Component {
   handleRegister = () => {
     this.props.form.validateFields((error, values) => {
       console.log(this.props.form.getFieldsValue());
-    })
+    });
   }
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -25,7 +25,7 @@ class FormRegister extends Component {
         xs: 24,
         sm: 12
       }
-    }
+    };
     const offsetLayout = {
       wrapperCol: {
         xs: 24,
@@ -34,11 +34,11 @@ class FormRegister extends Component {
           offset: 4
         }
       }
-    }
+    };
     const rowObject = {
       minRows: 5, 
       maxRows: 10
-    }
+    };
     return (
       <div>
         <Card title="注册表单">
@@ -158,7 +158,7 @@ class FormRegister extends Component {
           </Form>
         </Card>
       </div>
-    )
+    );
   }
 } 
 export default Form.create({name: 'FormRegister'})(FormRegister);

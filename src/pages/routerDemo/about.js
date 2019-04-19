@@ -7,6 +7,6 @@ export default class About extends Component {
         About:
         {this.props.match.params.aboutId}
       </div>
-    )
+    );
   }
 }

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Row, Col, Button } from 'antd'
-import './index.less'
+import React from 'react';
+import { Row, Col, Button } from 'antd';
+import './index.less';
 
 export default class OrderDetail extends React.Component {
 
@@ -11,15 +11,15 @@ export default class OrderDetail extends React.Component {
   render() {
     const { location } = this.props;
     const { state } = location;
-    console.log(state)
+    console.log(state);
     return (
       <div className="order-wrap">
         <Row>
           <Col span={20}>
             {
               state.map( (item, index) => 
-                  Object.keys(item).map( (key, index) => <div className="detail-item" key={index}>{key} : {item[key]}</div> )
-                )
+                Object.keys(item).map( (key, index) => <div className="detail-item" key={index}>{key} : {item[key]}</div> )
+              )
             }
           </Col>
           <Col span={4}>
@@ -27,6 +27,6 @@ export default class OrderDetail extends React.Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }

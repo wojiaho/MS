@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Card, Button,  message}  from 'antd'
-import './index.less'
+import React, { Component } from 'react';
+import { Card, Button,  message}  from 'antd';
+import './index.less';
 
 export default class Message extends Component {
 
@@ -8,7 +8,7 @@ export default class Message extends Component {
     message[type]('恭喜你，成为百万富翁!');
   }
  	render() {
-     return (
+    return (
       <div>
         <Card  className="card card-wrap" title="全局提示框">
           <Button type="primary" onClick={() => {this.handleOpen('success')}}>success</Button>
@@ -17,7 +17,7 @@ export default class Message extends Component {
           <Button type="primary" onClick={() => {this.handleOpen('error')}}>error</Button>
         </Card>
       </div>
-     )
+    );
   }
 
 

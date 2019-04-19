@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Card, Button, Modal }  from 'antd'
-import './index.less'
+import React, { Component } from 'react';
+import { Card, Button, Modal }  from 'antd';
+import './index.less';
 
 export default class Home extends Component {
   state = {
@@ -10,13 +10,13 @@ export default class Home extends Component {
     showModa4: false,
   }
   handleOpen = (type) => {
-    this.setState({[type]: true})
+    this.setState({[type]: true});
   }
   handleCancel = (type) => {
-    this.setState({[type]: false})
+    this.setState({[type]: false});
   }
   handleOk = (type) => {
-    this.setState({[type]: false})
+    this.setState({[type]: false});
   }
   handleConfirm = (type) => {
     Modal[type]({
@@ -25,15 +25,15 @@ export default class Home extends Component {
       okText: '是',
       cancelText: '否',
       onOk: () => {
-        console.log('(￣▽￣)~*')
+        console.log('(￣▽￣)~*');
       },
       onCancel: () => {
-        console.log('(▼ヘ▼#)')
+        console.log('(▼ヘ▼#)');
       }
-    })
+    });
   }
  	render() {
-     return (
+    return (
       <div>
         <Card  className="card card-wrap" title="基础模态框">
           <Button type="primary" onClick={() => this.handleOpen('showModal1')}>open</Button>
@@ -52,6 +52,6 @@ export default class Home extends Component {
           <p>欢迎！！！</p>
         </Modal>
       </div>
-     )
+    );
   }
 }

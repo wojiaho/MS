@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './home';
 import About from './about';
 import Main from './main';
@@ -24,6 +24,6 @@ export default class MRouter extends Component {
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }

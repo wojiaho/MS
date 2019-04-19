@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Menu } from 'antd';
-import { NavLink } from 'react-router-dom'
-import './index.less'
+import { NavLink } from 'react-router-dom';
+import './index.less';
 import  menuJson from '../../json/menuList';
 import { connect } from 'react-redux';
 import { switchMenu } from '../../redux/action';
@@ -21,15 +21,15 @@ class NavLeft extends Component {
       if(item.children) {
         return (<SubMenu key={item.key} title={item.title}>
           { this.getMenuList(item.children) }
-        </SubMenu>)
+        </SubMenu>);
       } 
-      return (<Menu.Item key={item.key} title={item.title}><NavLink to={item.key}><span> {item.title}</span> </NavLink></Menu.Item>)
-    })
+      return (<Menu.Item key={item.key} title={item.title}><NavLink to={item.key}><span> {item.title}</span> </NavLink></Menu.Item>);
+    });
     
   }
   handleClick = ({ item, key, keyPath }) => {
     const { dispatch } = this.props;
-    dispatch(switchMenu(item.props.title))
+    dispatch(switchMenu(item.props.title));
   }
   render() {
     return (
@@ -42,8 +42,8 @@ class NavLeft extends Component {
           {this.state.menuList}
         </Menu>
       </div>
-    )
+    );
   }
 }
 
-export default connect()(NavLeft)
+export default connect()(NavLeft);

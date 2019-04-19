@@ -1,5 +1,5 @@
-import React from 'react'
-import { Table }  from 'antd'
+import React from 'react';
+import { Table }  from 'antd';
 import './index.less';
 
 export default class HightTable extends React.Component {
@@ -81,6 +81,6 @@ export default class HightTable extends React.Component {
           onChange={this.handleChange}/>
       </div>
       
-    )
+    );
   }
 }

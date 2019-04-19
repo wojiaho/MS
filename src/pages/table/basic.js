@@ -1,5 +1,5 @@
-import React from 'react'
-import { Table, Tag, Divider }  from 'antd'
+import React from 'react';
+import { Table, Tag, Divider }  from 'antd';
 import './index.less';
 
 export default class BasicTable extends React.Component {
@@ -12,7 +12,7 @@ export default class BasicTable extends React.Component {
     this.setState({
       selectedRowKeys: selectKey,
       selectedItem: record
-    })
+    });
   }
   render() {
     const columns = [{
@@ -92,9 +92,9 @@ export default class BasicTable extends React.Component {
         <Table bordered rowSelection={rowSelection} columns={columns} dataSource={data} onRow={ (record, index) => {
           return {
             onClick: () => {this.onRowClick(record, index)},       // 点击行
-          }
+          };
         }}/>
       </div>
-    )
+    );
   }
 }

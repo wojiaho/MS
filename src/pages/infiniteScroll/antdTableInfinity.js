@@ -28,7 +28,7 @@ export default class TableInfinity extends React.Component {
     this.setState({
       loading: false,
       data: [...this.state.data, {key: this.state.data.length + 1, name: 'xh', age: 18, address: '上海'}]
-    })
+    });
   }
   render() {
     const { page, data, sumData } = this.state;
@@ -65,6 +65,6 @@ export default class TableInfinity extends React.Component {
           bordered
         />
       </div>
-    )
+    );
   }
 }

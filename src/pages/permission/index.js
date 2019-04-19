@@ -6,6 +6,6 @@ export default class PermissionUser extends Component {
       <div>
       
       </div>
-    )
+    );
   }
 }

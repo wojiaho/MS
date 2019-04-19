@@ -15,6 +15,6 @@ export default class Main extends Component {
         <Link to="/main/234">main234</Link>
         {this.props.children}
       </div>
-    )
+    );
   }
 }
