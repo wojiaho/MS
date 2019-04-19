@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { baseUrl } from './connection.js';
+import baseUrl from './connection.js';
 import { message } from 'antd';
 
 const instance = Axios.create({
@@ -22,6 +22,4 @@ error => {
   return Promise.reject(error.msg);
 });
 
-export {
-  instance,
-};
+export default instance;

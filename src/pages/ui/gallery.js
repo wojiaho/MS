@@ -13,7 +13,7 @@ export default class Gallery extends React.Component {
       ['21.png', '22.png', '23.png', '24.png', '25.png'],
     ];
     const imgList = imgs.map((list) => list.map((item, index) => (
-      <Card key={index} cover={<img alt="example" src={require(`../../resource/images/gallery/${item}`)} />}>
+      <Card key={`img${index + 1}`} cover={<img alt="example" src={require(`../../resource/images/gallery/${item}`)} />}>
         <Meta
           title="Europe Street beat"
           description="www.instagram.com"
@@ -25,10 +25,10 @@ export default class Gallery extends React.Component {
           {imgList.map((item, index) => {
             return (
               index === 4 ?
-                <Col key={index} md={4}>
+                <Col key={`imgList${index + 1}`} md={4}>
                   {item}
                 </Col> :
-                <Col key={index} md={5}>
+                <Col key={`imgList${index + 1}`} md={5}>
                   {item}
                 </Col>
 

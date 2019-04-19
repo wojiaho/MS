@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 import { Form, Icon, Button, Input, message } from 'antd';
 import { registerApi, loginApi } from '../../axios/api';
+import Proptypes from 'prop-types';
 import './index.less';
 
 const FromItem = Form.Item;
 class Login extends Component {
+  static propTypes = {
+    form: Proptypes.shape({
+      validateFields: Proptypes.func,
+      getFieldDecorator: Proptypes.func,
+    }),
+    history: Proptypes.shape({
+      push: Proptypes.func,
+    }),
+  }
+
   state = {
     isLogin: true,
   }

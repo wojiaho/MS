@@ -9,9 +9,9 @@ const polygonStyle = {
   fillColor: '#1791fc',
 };
 
-const ZoomCtrl = (props) => {
-  const map = props.__map__;
-  console.log(map);
+const ZoomCtrl = (/* props */) => {
+  // const map = props.__map__;
+  // console.log(map);
   return (
     <div>
       <button >zoom in</button>
@@ -116,7 +116,7 @@ export default class ReactAMap extends React.Component {
             <h4>当前地图状态</h4>
             <ul>
               {Object.keys(status).map((item, index) => {
-                return <li key={index}>{item} : {`${status[item]}`}</li>;
+                return <li key={`key${index + 1}`}>{item} : {`${status[item]}`}</li>;
               })}
             </ul>
           </div>

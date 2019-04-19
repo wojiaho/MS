@@ -6,10 +6,16 @@ import './index.less';
 import { connect } from 'react-redux';
 // import { Login } from '../../mock';
 // import axios from 'axios'
+import PropTypes from 'prop-types';
+
 const moment = require('moment');
 // console.log(Login)
 
 class Header extends Component {
+  static propTypes = {
+    menuName: PropTypes.string,
+  }
+
   constructor() {
     super();
     this.state = {

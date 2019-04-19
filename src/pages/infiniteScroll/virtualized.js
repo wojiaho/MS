@@ -59,7 +59,10 @@ export default class Virtualized extends React.Component {
             rowHeight={30}
             scrollToAlignment="start"
             tabIndex={1000}
-            onRowsRendered={({ overscanStartIndex, overscanStopIndex, startIndex, stopIndex }) => { console.log(overscanStartIndex, overscanStopIndex, startIndex, stopIndex); }}
+            onRowsRendered={
+              ({ overscanStartIndex, overscanStopIndex, startIndex, stopIndex }) => {
+                console.log(overscanStartIndex, overscanStopIndex, startIndex, stopIndex);
+              }}
             onScroll={this.onScroll}
             rowRenderer={this.rowRenderer}
           />

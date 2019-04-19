@@ -12,7 +12,10 @@ export default class MarkDown extends React.Component {
     return (
       <Row gutter={16}>
         <Col span={12}>
-          <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} />
+          <textarea
+            value={this.state.content}
+            onChange={e => this.setState({ content: e.target.value })}
+          />
         </Col>
         <Col span={12}>
           <ReactMarkdown

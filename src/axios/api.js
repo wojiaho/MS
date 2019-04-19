@@ -1,4 +1,4 @@
-import { instance as baseApi } from './index';
+import baseApi from './index';
 
 const registerApi = (data, cb) => {
   baseApi.post('auth/register', data)

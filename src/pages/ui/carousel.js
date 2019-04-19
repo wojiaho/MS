@@ -6,7 +6,7 @@ export default class MSCarousel extends React.Component {
   render() {
     const imgs = ['1.png', '2.png', '3.png', '4.png', '5.png'];
     const imgList = imgs.map((item, index) => {
-      return <div key={index} className="img-list"><img src={require(`../../resource/images/gallery/${item}`)} alt="" /></div>;
+      return <div key={`imgList${index + 1}`} className="img-list"><img src={require(`../../resource/images/gallery/${item}`)} alt="" /></div>;
     });
     return (
       <div>

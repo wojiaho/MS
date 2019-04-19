@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Form, Button, Input, Checkbox, Radio, Select, Switch, DatePicker, InputNumber } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import PropTypes from 'prop-types';
 
 moment.locale('zh-cn');
 
@@ -10,6 +11,14 @@ const RadioGroup = Radio.Group;
 const { Option } = Select;
 const { TextArea } = Input;
 class FormRegister extends Component {
+  static propTypes = {
+    form: PropTypes.shape({
+      validateFields: PropTypes.func.isRequired,
+      getFieldDecorator: PropTypes.func.isRequired,
+      getFieldsValue: PropTypes.func.isRequired,
+    }),
+  }
+
   handleRegister = () => {
     this.props.form.validateFields((error, values) => {
       console.log(this.props.form.getFieldsValue());

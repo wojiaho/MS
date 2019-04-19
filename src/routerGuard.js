@@ -3,8 +3,18 @@ import { Route } from 'react-router-dom';
 import NoFound from './pages/noFound';
 import Admin from './pages/admin';
 import Loadable from 'react-loadable';
+import PropTypes from 'prop-types';
 
 export default class RouterGuard extends Component {
+  static propTypes = {
+    location: PropTypes.shape({ pathname: PropTypes.string.isRequired }),
+    config: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      basePath: PropTypes.string,
+      path: PropTypes.string.isRequired,
+    })),
+  }
+
   componentWillMount() {
   }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, Tabs, Icon } from 'antd';
 import './index.less';
 
-const TabPane = Tabs.TabPane;
+const { TabPane } = Tabs;
 
 export default class Tab extends Component {
   render() {

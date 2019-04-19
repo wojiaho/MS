@@ -1,8 +1,23 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
+import PropTypes from 'prop-types';
 import './index.less';
 
 export default class OrderDetail extends React.Component {
+  static propTypes = {
+    history: PropTypes.shape({
+      go: PropTypes.func.isRequired,
+    }),
+    location: PropTypes.shape({
+      state: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.string,
+        orderNo: PropTypes.string,
+        state: PropTypes.string,
+        address: PropTypes.string,
+      })),
+    }),
+  }
+
   goBack = () => {
     const { history } = this.props;
     history.go(-1);
@@ -17,7 +32,7 @@ export default class OrderDetail extends React.Component {
         <Row>
           <Col span={20}>
             {
-              state.map((item) => Object.keys(item).map((key, index) => <div className="detail-item" key={index}>{key} : {item[key]}</div>))
+              state.map((item) => Object.keys(item).map((key, index) => <div className="detail-item" key={`state${index + 1}`}>{key} : {item[key]}</div>))
             }
           </Col>
           <Col span={4}>

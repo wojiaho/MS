@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { Card, Form, Input, Button, Message, Checkbox } from 'antd';
+import Proptypes from 'prop-types';
 import '../ui/index.less';
 
 const FormItem = Form.Item;
 class FormLogin extends Component {
+  static propTypes = {
+    form: Proptypes.shape({
+      validateFields: Proptypes.func,
+      getFieldDecorator: Proptypes.func,
+    }),
+  }
+
   handleLogin = () => {
     this.props.form.validateFields((errors, values) => {
       console.log(values);

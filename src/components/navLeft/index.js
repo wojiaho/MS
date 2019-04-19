@@ -5,10 +5,15 @@ import './index.less';
 import menuJson from '../../json/menuList';
 import { connect } from 'react-redux';
 import { switchMenu } from '../../redux/action';
+import Proptypes from 'prop-types';
 
-const SubMenu = Menu.SubMenu;
+const { SubMenu } = Menu;
 
 class NavLeft extends Component {
+  static propTypes = {
+    dispatch: Proptypes.func,
+  }
+
   constructor() {
     super();
     this.state = {
@@ -30,7 +35,15 @@ class NavLeft extends Component {
             { this.getMenuList(item.children) }
           </SubMenu>);
       }
-      return (<Menu.Item key={item.key} title={item.title}><NavLink to={item.key}><span> {item.title}</span> </NavLink></Menu.Item>);
+      return (
+        <Menu.Item
+          key={item.key}
+          title={item.title}
+        >
+          <NavLink to={item.key}>
+            <span> {item.title}</span>
+          </NavLink>
+        </Menu.Item>);
     });
   }
 

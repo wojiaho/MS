@@ -1,8 +1,13 @@
 import React from 'react';
 import { Table, Button, message } from 'antd';
 import './index.less';
+import Proptypes from 'prop-types';
 
 export default class OrderList extends React.Component {
+  static propTypes = {
+    history: Proptypes.shape({ push: Proptypes.func.isRequired }),
+  }
+
   state = {
     data: [
       {
@@ -51,7 +56,12 @@ export default class OrderList extends React.Component {
     return (
       <div className="order-wrap">
         <Button className="btn" type="primary" onClick={this.getOrderDetail}>查看详情</Button>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={this.state.data} bordered />
+        <Table
+          rowSelection={rowSelection}
+          columns={columns}
+          dataSource={this.state.data}
+          bordered
+        />
       </div>
     );
   }
