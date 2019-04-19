@@ -10,25 +10,17 @@ const moment = require('moment');
 // console.log(Login)
 
 class Header extends Component {
-  state = {
-    date: moment().format('YYYY-MM-DD')
+  constructor() {
+    super();
+    this.state = {
+      date: moment().format('YYYY-MM-DD'),
+    };
   }
+
   componentWillMount() {
     // this.getsCurrentPosition();
   }
-  // getsCurrentPosition () {
-  //   // 百度地图API功能
-  // 	var geolocation = new BMap.Geolocation();
-  //   geolocation.getCurrentPosition(function(r){
-  //     if(this.getStatus() === 0){
-  //       axios.get('http://api.map.baidu.com/telematics/v3/weather?location=%E5%8C%97%E4%BA%AC&output=json&ak=E4805d16520de693a3fe707cdc962045')
-  //       .then(data => {
-  //         console.log(data);
-  //       });
-  //     }
-          
-  //   },{enableHighAccuracy: true})
-  // }
+
   render() {
     return (
       <div className="header">
@@ -53,7 +45,7 @@ class Header extends Component {
 }
 const mapStateToProps = state => {
   return {
-    menuName: state.menuName
+    menuName: state.menuName,
   };
 };
 export default connect(mapStateToProps)(Header);

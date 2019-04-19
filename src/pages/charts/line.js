@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import './index.less';
 
 const DataSet = require('@antv/data-set');
+
 const data = [
   { year: '1991', value: 3 },
   { year: '1992', value: 4 },
@@ -19,7 +20,7 @@ const data = [
 const scale = [{
   dataKey: 'value',
   min: 0,
-},{
+}, {
   dataKey: 'year',
   min: 0,
   max: 1,
@@ -60,13 +61,13 @@ export default class App extends React.Component {
     return (
       <div>
         <Row className="chart-row" gutter={16}>
-          <Col  span={12}>
+          <Col span={12}>
             <div className="chart-wrap">
               <Chart forceFit height={400} data={data} scale={scale}>
                 <Tooltip />
                 <Axis />
                 <Line position="year*value" />
-                <Point position="year*value" shape="circle"/>
+                <Point position="year*value" shape="circle" />
               </Chart>
             </div>
           </Col>
@@ -77,7 +78,7 @@ export default class App extends React.Component {
                 <Axis />
                 <Legend />
                 <Line position="month*temperature" color="city" />
-                <Point position="month*temperature" color="city" size={4} style={{ stroke: '#fff', lineWidth: 1 }} shape="circle"/>
+                <Point position="month*temperature" color="city" size={4} style={{ stroke: '#fff', lineWidth: 1 }} shape="circle" />
               </Chart>
             </div>
           </Col>

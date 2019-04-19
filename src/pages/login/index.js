@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { Form, Icon, Button, Input, message } from 'antd';
 import { registerApi, loginApi } from '../../axios/api';
 import './index.less';
@@ -6,17 +6,19 @@ import './index.less';
 const FromItem = Form.Item;
 class Login extends Component {
   state = {
-    isLogin: true
+    isLogin: true,
   }
-  handleClick = () =>{
+
+  handleClick = () => {
     this.setState({
-      isLogin: !this.state.isLogin
+      isLogin: !this.state.isLogin,
     });
   }
+
   handleSubmit = () => {
     this.props.form.validateFields((err, values) => {
-      if(!err) {
-        if(this.state.isLogin) {
+      if (!err) {
+        if (this.state.isLogin) {
           loginApi(values, this.successCallback);
         } else {
           registerApi(values, this.successCallback);
@@ -24,12 +26,14 @@ class Login extends Component {
       }
     });
   }
-  successCallback = (res) => {
+
+  successCallback = () => {
     message.success(`恭喜，${this.state.isLogin ? '登录' : '注册'}成功！`);
-    let { history } = this.props;
+    const { history } = this.props;
     history.push('/home');
   }
-  render () {
+
+  render() {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="login-wrap">
@@ -38,14 +42,14 @@ class Login extends Component {
             {getFieldDecorator('username', {
               rules: [{ required: true, message: '请输入用户名！' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名"  size="large"/>
+              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" size="large" />
             )}
           </FromItem>
           <FromItem>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: '请输入秘密！' }],
             })(
-              <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="密码" size="large"/>
+              <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="密码" size="large" />
             )}
           </FromItem>
           <FromItem>

@@ -5,13 +5,13 @@ import { message } from 'antd';
 const instance = Axios.create({
   baseURL: baseUrl,
   headers: {
-    "Content-Type": "application/json; charset=utf-8"
-  }
+    'Content-Type': 'application/json; charset=utf-8',
+  },
 });
 
-instance.interceptors.response.use(function (response) {
+instance.interceptors.response.use((response) => {
   const { data } = response;
-  if (data.status ===  'ok') {
+  if (data.status === 'ok') {
     return data;
   } else {
     message.error(data.msg);
@@ -23,5 +23,5 @@ error => {
 });
 
 export {
-  instance
+  instance,
 };

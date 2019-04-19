@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import { Card, Button, Modal }  from 'antd';
+import { Card, Button, Modal } from 'antd';
 import './index.less';
 
-export default class Home extends Component {
+export default class Modals extends Component {
   state = {
-    showModal: false,
-    showModa2: false,
-    showModa3: false,
-    showModa4: false,
+    showModal1: false,
+    showModal2: false,
   }
+
   handleOpen = (type) => {
-    this.setState({[type]: true});
+    this.setState({ [type]: true });
   }
+
   handleCancel = (type) => {
-    this.setState({[type]: false});
+    this.setState({ [type]: false });
   }
+
   handleOk = (type) => {
-    this.setState({[type]: false});
+    this.setState({ [type]: false });
   }
+
   handleConfirm = (type) => {
     Modal[type]({
       title: type,
@@ -29,17 +31,18 @@ export default class Home extends Component {
       },
       onCancel: () => {
         console.log('(▼ヘ▼#)');
-      }
+      },
     });
   }
- 	render() {
+
+  render() {
     return (
       <div>
-        <Card  className="card card-wrap" title="基础模态框">
+        <Card className="card card-wrap" title="基础模态框">
           <Button type="primary" onClick={() => this.handleOpen('showModal1')}>open</Button>
           <Button type="primary" onClick={() => this.handleOpen('showModal2')}>自定义页脚</Button>
         </Card>
-        <Card  className="card card-wrap" title="信息确认框">
+        <Card className="card card-wrap" title="信息确认框">
           <Button type="primary" onClick={() => this.handleConfirm('confirm')}>Confirm</Button>
           <Button type="primary" onClick={() => this.handleConfirm('info')}>info</Button>
           <Button type="primary" onClick={() => this.handleConfirm('success')}>info</Button>

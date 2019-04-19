@@ -1,19 +1,21 @@
 import React from 'react';
-import { Table, Tag, Divider }  from 'antd';
+import { Table, Tag, Divider } from 'antd';
 import './index.less';
 
 export default class BasicTable extends React.Component {
   state = {
     selectedRowKeys: ['0'],
-    selectedItem: {}
+    // selectedItem: {},
   }
+
   onRowClick = (record, index) => {
-    let selectKey = [index + ''];
+    const selectKey = [`${index}`];
     this.setState({
       selectedRowKeys: selectKey,
-      selectedItem: record
+      // selectedItem: record,
     });
   }
+
   render() {
     const columns = [{
       title: 'Name',
@@ -54,7 +56,7 @@ export default class BasicTable extends React.Component {
         </span>
       ),
     }];
-    
+
     const data = [{
       key: '0',
       name: 'John Brown',
@@ -77,9 +79,9 @@ export default class BasicTable extends React.Component {
     const rowSelection = {
       type: 'radio',
       selectedRowKeys: this.state.selectedRowKeys,
-      onSelect: (selectedRowKeys, selectedRows) => {
+      onSelect: (selectedRowKeys) => {
         this.setState({
-          selectedRowKeys: [selectedRowKeys.key]
+          selectedRowKeys: [selectedRowKeys.key],
         });
       },
       getCheckboxProps: record => ({
@@ -89,11 +91,17 @@ export default class BasicTable extends React.Component {
     };
     return (
       <div className="table-wrap">
-        <Table bordered rowSelection={rowSelection} columns={columns} dataSource={data} onRow={ (record, index) => {
-          return {
-            onClick: () => {this.onRowClick(record, index)},       // 点击行
-          };
-        }}/>
+        <Table
+          bordered
+          rowSelection={rowSelection}
+          columns={columns}
+          dataSource={data}
+          onRow={(record, index) => {
+            return {
+              onClick: () => { this.onRowClick(record, index); }, // 点击行
+            };
+          }}
+        />
       </div>
     );
   }

@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import { Card, Button, Icon, Radio }  from 'antd';
+import { Card, Button, Icon, Radio } from 'antd';
 import './index.less';
 
-export default class Home extends Component {
+export default class Buttons extends Component {
   state = {
     isLoading: true,
-    size: 'default'
+    size: 'default',
   }
+
   componentWillMount() {
   }
+
   // 切换loading
   toggleLoading = () => {
-    this.setState({isLoading: !this.state.isLoading});
+    this.setState({ isLoading: !this.state.isLoading });
   }
+
   handleSize = (e) => {
-    this.setState({size: e.target.value});
+    this.setState({ size: e.target.value });
   }
- 	render() {
+
+  render() {
     return (
       <div>
         <Card className="card card-wrap" title="按钮">
@@ -25,7 +29,7 @@ export default class Home extends Component {
         </Card>
         <Card className="card card-wrap" title="图形按钮">
           <Button icon="plus">按钮</Button>
-          <Button shape="circle" icon="search"></Button>
+          <Button shape="circle" icon="search" />
         </Card>
         <Card className="card card-wrap" title="loading按钮">
           <Button type="primary" loading={this.state.isLoading}>确定</Button>
@@ -33,12 +37,12 @@ export default class Home extends Component {
         </Card>
         <Card className="card" title="按钮组">
           <Button.Group>
-            <Button type="primary"><Icon type="left"/> 返回</Button>
-            <Button type="primary">前进 <Icon type="right"/></Button>
+            <Button type="primary"><Icon type="left" /> 返回</Button>
+            <Button type="primary">前进 <Icon type="right" /></Button>
           </Button.Group>
         </Card>
         <Card className="card card-wrap" title="loading按钮">
-          <Radio.Group  value={this.state.size} onChange={this.handleSize}>
+          <Radio.Group value={this.state.size} onChange={this.handleSize}>
             <Radio value="small">小</Radio>
             <Radio value="default">中</Radio>
             <Radio value="large">大</Radio>

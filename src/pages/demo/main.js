@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './home';
 import About from './about';
 import Life from './life';
 
 export default class Main extends Component {
-  render () {
+  render() {
     return (
       <Router>
         <div>

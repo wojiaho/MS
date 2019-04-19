@@ -8,15 +8,15 @@ export default class Admin extends Component {
   render() {
     return (
       <div className="page-wrapper">
-        <div  className="nav-left">
-          <NavLeft/>
+        <div className="nav-left">
+          <NavLeft />
         </div>
         <div className="main">
-          <Header routeConfig={this.props.routeConfig}/>
+          <Header routeConfig={this.props.routeConfig} />
           <div className="container">
             {this.props.children}
           </div>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     );

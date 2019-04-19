@@ -6,13 +6,13 @@ const content = `# This is a header\n\nAnd this is a paragraph\n\n # 测试\n\n 
 export default class HighLighter extends React.Component {
   render() {
     return (
-      <ReactMarkdown 
-        source={content} 
-        escapeHtml={true} 
-        skipHtml={false} 
-        sourcePos={true}
-        rawSourcePos={true}
-        includeNodeIndex={true}
+      <ReactMarkdown
+        source={content}
+        escapeHtml
+        skipHtml={false}
+        sourcePos
+        rawSourcePos
+        includeNodeIndex
       />
     );
   }

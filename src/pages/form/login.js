@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Form, Input, Button, Message, Checkbox }  from 'antd';
+import { Card, Form, Input, Button, Message, Checkbox } from 'antd';
 import '../ui/index.less';
 
 const FormItem = Form.Item;
@@ -7,22 +7,23 @@ class FormLogin extends Component {
   handleLogin = () => {
     this.props.form.validateFields((errors, values) => {
       console.log(values);
-      if(!errors) {
+      if (!errors) {
         Message.success(`登录成功，用户名为：${values.userName},密码：${values.password}`);
       }
     });
-  } 
- 	render() {
+  }
+
+  render() {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
         <Card className="card card-wrap" title="登录行内表单">
           <Form layout="inline">
             <FormItem>
-              <Input placeholder="请输入用户名"/>
+              <Input placeholder="请输入用户名" />
             </FormItem>
             <FormItem>
-              <Input placeholder="请输入密码"/>
+              <Input placeholder="请输入密码" />
             </FormItem>
             <FormItem>
               <Button type="primary">登录</Button>
@@ -30,29 +31,29 @@ class FormLogin extends Component {
           </Form>
         </Card>
         <Card className="card card-wrap" title="登录水平表单">
-          <Form style={{width: 300}}>
+          <Form style={{ width: 300 }}>
             <FormItem>
               {
                 getFieldDecorator('userName', {
                   rules: [{
                     required: true,
-                    message: '请输入用户名'
+                    message: '请输入用户名',
                   }],
                 })(
-                  <Input placeholder="请输入用户名"/>
+                  <Input placeholder="请输入用户名" />
                 )
               }
-              
+
             </FormItem>
             <FormItem>
               {
                 getFieldDecorator('password', {
                   rules: [{
                     required: true,
-                    message: '请输入密码'
+                    message: '请输入密码',
                   }],
                 })(
-                  <Input placeholder="请输入密码" type="password"/>
+                  <Input placeholder="请输入密码" type="password" />
                 )
               }
             </FormItem>
@@ -60,7 +61,7 @@ class FormLogin extends Component {
               {
                 getFieldDecorator('remember', {
                   valuePropName: 'checked',
-                  initialValue: true
+                  initialValue: true,
                 })(
                   <Checkbox>记住密码</Checkbox>
                 )

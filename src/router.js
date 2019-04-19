@@ -10,10 +10,10 @@ export default class MSRouter extends Component {
   render() {
     return (
       <Router>
-        <LocaleProvider  locale={zh_CN}>
+        <LocaleProvider locale={zh_CN}>
           <App>
             <Switch>
-              <RouterGuard config={routerConfig}/>
+              <RouterGuard config={routerConfig} />
             </Switch>
           </App>
         </LocaleProvider>

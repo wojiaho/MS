@@ -11,16 +11,17 @@ import './index.less';
 export default class Editor extends React.Component {
   state = {
     editorState: BraftEditor.createEditorState('111'),
-    visible: false
+    visible: false,
   }
 
   setEditorContent = () => {
     this.setState({
-      editorState: BraftEditor.createEditorState('这是我设置的富文本的内容')
+      editorState: BraftEditor.createEditorState('这是我设置的富文本的内容'),
     });
   }
+
   getEditorContent = () => {
-    this.setState({ visible: true});
+    this.setState({ visible: true });
   }
 
   render() {
@@ -34,9 +35,11 @@ export default class Editor extends React.Component {
           onChange={this.handleEditorChange}
           onSave={this.submitContent}
         />
-        <Modal title="富文本内容" visible={this.state.visible}
-          onOk={() => {this.setState({visible: false})}}
-          onCancel={() => {this.setState({visible: false})}}
+        <Modal
+          title="富文本内容"
+          visible={this.state.visible}
+          onOk={() => { this.setState({ visible: false }); }}
+          onCancel={() => { this.setState({ visible: false }); }}
         >
           <p>
             { this.state.editorState.toHTML() }

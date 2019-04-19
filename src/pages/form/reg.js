@@ -1,7 +1,8 @@
-import React, {  Component } from 'react';
-import { Card, Form, Button, Input, Checkbox, Radio, Select, Switch, DatePicker, InputNumber }  from 'antd';
+import React, { Component } from 'react';
+import { Card, Form, Button, Input, Checkbox, Radio, Select, Switch, DatePicker, InputNumber } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+
 moment.locale('zh-cn');
 
 const FromItem = Form.Item;
@@ -12,32 +13,34 @@ class FormRegister extends Component {
   handleRegister = () => {
     this.props.form.validateFields((error, values) => {
       console.log(this.props.form.getFieldsValue());
+      console.log(error, values);
     });
   }
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: {
         xs: 24,
-        sm: 4
+        sm: 4,
       },
       wrapperCol: {
         xs: 24,
-        sm: 12
-      }
+        sm: 12,
+      },
     };
     const offsetLayout = {
       wrapperCol: {
         xs: 24,
         sm: {
           span: 12,
-          offset: 4
-        }
-      }
+          offset: 4,
+        },
+      },
     };
     const rowObject = {
-      minRows: 5, 
-      maxRows: 10
+      minRows: 5,
+      maxRows: 10,
     };
     return (
       <div>
@@ -48,10 +51,10 @@ class FormRegister extends Component {
                 getFieldDecorator('userName', {
                   rules: [{
                     required: true,
-                    message: '请输入用户名'
+                    message: '请输入用户名',
                   }],
                 })(
-                  <Input placeholder="请输入用户名"/>
+                  <Input placeholder="请输入用户名" />
                 )
               }
             </FromItem>
@@ -60,17 +63,17 @@ class FormRegister extends Component {
                 getFieldDecorator('userPwd', {
                   rules: [{
                     required: true,
-                    message: '请输入密码'
+                    message: '请输入密码',
                   }],
                 })(
-                  <Input placeholder="请输入密码" type="password"/>
+                  <Input placeholder="请输入密码" type="password" />
                 )
               }
             </FromItem>
             <FromItem label="性别" {...formItemLayout}>
               {
                 getFieldDecorator('sex', {
-                  initialValue: '1'
+                  initialValue: '1',
                 })(
                   <RadioGroup>
                     <Radio value="1">男</Radio>
@@ -82,7 +85,7 @@ class FormRegister extends Component {
             <FromItem label="年龄" {...formItemLayout}>
               {
                 getFieldDecorator('age', {
-                  initialValue: 18
+                  initialValue: 18,
                 })(
                   <InputNumber />
                 )
@@ -91,7 +94,7 @@ class FormRegister extends Component {
             <FromItem label="当前状态" {...formItemLayout}>
               {
                 getFieldDecorator('state', {
-                  initialValue: '1'
+                  initialValue: '1',
                 })(
                   <Select>
                     <Option value="1">我想发工资</Option>
@@ -105,7 +108,7 @@ class FormRegister extends Component {
             <FromItem label="爱好" {...formItemLayout}>
               {
                 getFieldDecorator('hobby', {
-                  initialValue: []
+                  initialValue: [],
                 })(
                   <Select mode="multiple">
                     <Option value="1">打羽毛球</Option>
@@ -122,9 +125,9 @@ class FormRegister extends Component {
               {
                 getFieldDecorator('isMarried', {
                   valuePropName: 'checked',
-                  initialValue: true
+                  initialValue: true,
                 })(
-                  <Switch></Switch>
+                  <Switch />
                 )
               }
             </FromItem>
@@ -132,7 +135,7 @@ class FormRegister extends Component {
               {
                 getFieldDecorator('birthday', {
                 })(
-                  <DatePicker  format="YYYY-MM-DD" ></DatePicker>
+                  <DatePicker format="YYYY-MM-DD" />
                 )
               }
             </FromItem>
@@ -140,7 +143,7 @@ class FormRegister extends Component {
               {
                 getFieldDecorator('address', {
                 })(
-                  <TextArea autosize={rowObject}></TextArea>
+                  <TextArea autosize={rowObject} />
                 )
               }
             </FromItem>
@@ -152,7 +155,7 @@ class FormRegister extends Component {
                 )
               }
             </FromItem>
-            <FromItem style={{textAlign: 'center'}}>
+            <FromItem style={{ textAlign: 'center' }}>
               <Button type="primary" onClick={this.handleRegister}>注册</Button>
             </FromItem>
           </Form>
@@ -160,5 +163,5 @@ class FormRegister extends Component {
       </div>
     );
   }
-} 
-export default Form.create({name: 'FormRegister'})(FormRegister);
+}
+export default Form.create({ name: 'FormRegister' })(FormRegister);

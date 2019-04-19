@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table }  from 'antd';
+import { Table } from 'antd';
 import './index.less';
 
 export default class HightTable extends React.Component {
@@ -14,13 +14,18 @@ export default class HightTable extends React.Component {
       sortedInfo: sorter,
     });
   }
+
   render() {
     let { sortedInfo, filteredInfo } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
     const columns = [
       {
-        title: 'Full Name', width: 100, dataIndex: 'name', key: 'name', fixed: 'left',
+        title: 'Full Name',
+        width: 100,
+        dataIndex: 'name',
+        key: 'name',
+        fixed: 'left',
         filters: [
           { text: 'Edrward 0', value: 'Edrward 0' },
           { text: 'Edrward 1', value: 'Edrward 1' },
@@ -29,7 +34,11 @@ export default class HightTable extends React.Component {
         filteredValue: filteredInfo.name || null,
       },
       {
-        title: 'Age', width: 100, dataIndex: 'age', key: 'age', fixed: 'left',
+        title: 'Age',
+        width: 100,
+        dataIndex: 'age',
+        key: 'age',
+        fixed: 'left',
         sorter: (a, b) => a.age - b.age,
         sortOrder: sortedInfo.columnKey === 'age' && sortedInfo.order,
       },
@@ -71,16 +80,19 @@ export default class HightTable extends React.Component {
         name: `Edrward ${i}`,
         age: i,
         address: `London Park no. ${i}`,
-        description: '哈哈哈哈'
+        description: '哈哈哈哈',
       });
     }
     return (
-      <div style={{backgroundColor: '#fff'}}>
-        <Table columns={columns} dataSource={data} 
+      <div style={{ backgroundColor: '#fff' }}>
+        <Table
+          columns={columns}
+          dataSource={data}
           expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
-          onChange={this.handleChange}/>
+          onChange={this.handleChange}
+        />
       </div>
-      
+
     );
   }
 }

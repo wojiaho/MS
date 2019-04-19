@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, Tooltip, Axis, Bar, Legend, Coord } from 'viser-react';
 import { Row, Col } from 'antd';
 import './index.less';
+
 const DataSet = require('@antv/data-set');
 
 const data1 = [
@@ -20,8 +21,8 @@ const scale1 = [{
 }];
 
 const sourceData = [
-  { name: 'London', 'Jan.': 18.9, 'Feb.': 28.8, 'Mar.': 39.3, 'Apr.': 81.4, 'May': 47, 'Jun.': 20.3, 'Jul.': 24, 'Aug.': 35.6 },
-  { name: 'Berlin', 'Jan.': 12.4, 'Feb.': 23.2, 'Mar.': 34.5, 'Apr.': 99.7, 'May': 52.6, 'Jun.': 35.5, 'Jul.': 37.4, 'Aug.': 42.4 },
+  { name: 'London', 'Jan.': 18.9, 'Feb.': 28.8, 'Mar.': 39.3, 'Apr.': 81.4, May: 47, 'Jun.': 20.3, 'Jul.': 24, 'Aug.': 35.6 },
+  { name: 'Berlin', 'Jan.': 12.4, 'Feb.': 23.2, 'Mar.': 34.5, 'Apr.': 99.7, May: 52.6, 'Jun.': 35.5, 'Jul.': 37.4, 'Aug.': 42.4 },
 ];
 
 const dv = new DataSet.View().source(sourceData);
@@ -54,7 +55,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Row className="chart-row" gutter={16}>
-          <Col  span={12}>
+          <Col span={12}>
             <div className="chart-wrap">
               <Chart forceFit height={400} data={data1} scale={scale1}>
                 <Tooltip />
@@ -65,7 +66,7 @@ export default class App extends React.Component {
           </Col>
           <Col span={12}>
             <div className="chart-wrap">
-              <Chart  forceFit height={400} data={data2}>
+              <Chart forceFit height={400} data={data2}>
                 <Tooltip />
                 <Axis />
                 <Legend />
@@ -75,7 +76,7 @@ export default class App extends React.Component {
           </Col>
         </Row>
         <Row className="chart-row" gutter={16}>
-          <Col  span={12}>
+          <Col span={12}>
             <div className="chart-wrap">
               <Chart forceFit height={400} data={data1}>
                 <Coord type="rect" direction="LB" />
