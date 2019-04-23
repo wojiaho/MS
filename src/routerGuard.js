@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import Login from './pages/login';
 import NoFound from './pages/noFound';
 import Admin from './pages/admin';
 import Loadable from 'react-loadable';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { toggleLogin } from './redux/action';
 
-export default class RouterGuard extends Component {
+class RouterGuard extends Component {
   static propTypes = {
     location: PropTypes.shape({ pathname: PropTypes.string.isRequired }),
     config: PropTypes.arrayOf(PropTypes.shape({
@@ -13,13 +16,22 @@ export default class RouterGuard extends Component {
       basePath: PropTypes.string,
       path: PropTypes.string.isRequired,
     })),
+    history: PropTypes.shape({ push: PropTypes.func.isRequired }),
+    dispatch: PropTypes.func.isRequired,
+    isLogin: PropTypes.bool,
   }
 
   componentWillMount() {
+    const { isLogin } = this.props;
+    window.onbeforeunload = () => {
+      sessionStorage.setItem('isLogin', isLogin);
+    };
+    const { dispatch } = this.props;
+    dispatch(toggleLogin(!(isLogin || sessionStorage.getItem('isLogin') === 'false')));
   }
 
   render() {
-    const { location, config } = this.props;
+    const { location, config, history } = this.props;
     const { pathname } = location;
     const targetRouterConfig = config.find((v) => v.path === pathname);
     const loadingComponent = Loadable({
@@ -27,12 +39,12 @@ export default class RouterGuard extends Component {
       loading: () => '',
     });
     if (targetRouterConfig && targetRouterConfig.auth) {
-      return <Route to="/login" component={loadingComponent} />;
+      return <Redirect to="/login" component={Login} />;
     } else if (!targetRouterConfig) {
-      return (<Route to="/noFound" component={NoFound} />);
+      return (<Redirect to="/noFound" component={NoFound} />);
     } else if (targetRouterConfig.basePath) {
       return (
-        <Admin routeConfig={targetRouterConfig}>
+        <Admin routeConfig={targetRouterConfig} history={history}>
           <Route path={targetRouterConfig.path} component={loadingComponent} />
         </Admin>
       );
@@ -41,3 +53,10 @@ export default class RouterGuard extends Component {
     }
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isLogin: state.isLogin,
+  };
+};
+export default connect(mapStateToProps)(RouterGuard);

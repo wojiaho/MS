@@ -13,6 +13,9 @@ export default class Admin extends Component {
       path: PropTypes.string.isRequired,
     }),
     children: PropTypes.element.isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+    }),
   }
 
   render() {
@@ -22,7 +25,7 @@ export default class Admin extends Component {
           <NavLeft />
         </div>
         <div className="main">
-          <Header routeConfig={this.props.routeConfig} />
+          <Header routeConfig={this.props.routeConfig} history={this.props.history} />
           <div className="container">
             {this.props.children}
           </div>

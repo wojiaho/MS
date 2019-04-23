@@ -78,6 +78,7 @@ const routerConfig = [
     title: '订单列表',
     basePath: '/admin',
     path: '/order/list',
+    auth: true,
   },
   {
     title: '订单详情',

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Icon, Button, Input, message } from 'antd';
 import { registerApi, loginApi } from '../../axios/api';
+import { connect } from 'react-redux';
+import { toggleLogin } from '../../redux/action';
 import Proptypes from 'prop-types';
 import './index.less';
 
@@ -14,6 +16,7 @@ class Login extends Component {
     history: Proptypes.shape({
       push: Proptypes.func,
     }),
+    dispatch: Proptypes.func.isRequired,
   }
 
   state = {
@@ -39,6 +42,8 @@ class Login extends Component {
   }
 
   successCallback = () => {
+    const { dispatch } = this.props;
+    dispatch(toggleLogin(true));
     message.success(`恭喜，${this.state.isLogin ? '登录' : '注册'}成功！`);
     const { history } = this.props;
     history.push('/home');
@@ -73,4 +78,4 @@ class Login extends Component {
   }
 }
 
-export default Form.create()(Login);
+export default connect()(Form.create()(Login));

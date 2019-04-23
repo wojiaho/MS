@@ -3,6 +3,7 @@
  */
 const initialState = {
   menuName: '首页',
+  isLogin: false,
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +11,10 @@ export default (state = initialState, action) => {
     case 'SWITCH_MENU': return {
       ...state,
       menuName: action.menuName,
+    };
+    case 'IS_Login': return {
+      ...state,
+      isLogin: action.isLogin,
     };
     default: return state;
   }
