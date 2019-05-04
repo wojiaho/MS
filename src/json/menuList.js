@@ -144,7 +144,7 @@ const menuList = [
     component: 'Markdown',
   },
   {
-    title: '无线滚动',
+    title: '无限滚动',
     key: '/infiniteScroll',
     children: [{
       title: 'virtualized',

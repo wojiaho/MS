@@ -41,7 +41,8 @@ class Login extends Component {
     });
   }
 
-  successCallback = () => {
+  successCallback = (data) => {
+    localStorage.setItem('username', data.data.username);
     const { dispatch } = this.props;
     dispatch(toggleLogin(true));
     message.success(`恭喜，${this.state.isLogin ? '登录' : '注册'}成功！`);
@@ -58,14 +59,14 @@ class Login extends Component {
             {getFieldDecorator('username', {
               rules: [{ required: true, message: '请输入用户名！' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" size="large" />
+              <Input allowClear prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="用户名" size="large" />
             )}
           </FromItem>
           <FromItem>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: '请输入秘密！' }],
             })(
-              <Input type="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="密码" size="large" />
+              <Input.Password prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="密码" size="large" />
             )}
           </FromItem>
           <FromItem>

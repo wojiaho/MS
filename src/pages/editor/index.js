@@ -24,6 +24,10 @@ export default class Editor extends React.Component {
     this.setState({ visible: true });
   }
 
+  handleEditorChange = (editorState) => {
+    this.setState({ editorState });
+  }
+
   render() {
     const { editorState } = this.state;
     return (
